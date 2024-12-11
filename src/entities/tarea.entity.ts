@@ -16,6 +16,9 @@ export class Tarea extends BaseEntity {
     default: false
   })
   estado: boolean
+
+  @Column()
+  dificultad: string
   
   @ManyToOne(() => Usuario, (usuario) => usuario.tareas, {onDelete: 'CASCADE'}) //onDelete: una propiedad que elimina las tareas asignadas al usuario cuando se elimiina el usuario
   @JoinColumn({name:"idUsuario"}) //Para definir el nombre de la relacion 
